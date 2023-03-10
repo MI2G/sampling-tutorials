@@ -3,7 +3,7 @@
 In these tutorials, you will learn about Bayesian computation for inverse problems in imaging science. We set up an image deconvolution problem and solve the inverse problem by using different sampling algorithms. Because we obtain samples from the posterior distribution we are able to do uncertainty quantification and other advance inferences. Currently, there is a Python notebook using a vanilla [Langevin sampling algorithm](https://hal.science/hal-01267115/document) (MYULA_pytorch.ipynb) and an accelerated algorithm [SK-ROCK](https://pure.hw.ac.uk/ws/portalfiles/portal/41830170/19m1283719.pdf) (using an explicit stabilized method, SKROCK_pytorch.ipynb). We showcase a deblurring problem using a Total Variation (TV) prior.
 
 ### Authors
-* Paul Dobson, Paul [pdobson@ed.ac.uk](pdobson@ed.ac.uk)
+* Dobson, Paul [pdobson@ed.ac.uk](pdobson@ed.ac.uk)
 * Kemajou, Mbakam Charlesquin [cmk2000@hw.ac.uk](cmk2000@hw.ac.uk)
 * Klatzer, Teresa [t.klatzer@sms.ed.ac.uk](t.klatzer@sms.ed.ac.uk)
 * Melidonis, Savvas [sm2041@hw.ac.uk](sm2041@hw.ac.uk)
