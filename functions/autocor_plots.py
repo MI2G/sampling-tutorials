@@ -33,7 +33,6 @@ def autocor_plots(X_chain, method_str, nLags=100):
     '''
     Inputs:
         - X_chain (Matrix): Markov chain
-        - var (matrix): Variance of the Markov chain computed in the Fourier domain.
         - M=method_str (string): Name of the Markov chain used
         - nLags (int): Number of lags used for the autocorrelation function.
     Outputs:
