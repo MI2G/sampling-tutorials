@@ -5,6 +5,6 @@ from cshift import *
 from Grad_Image import *
 from max_eigenval import *
 from measures import *
-from norml12 import *
+from tv_norm import *
 from plots import *
 from welford import *
