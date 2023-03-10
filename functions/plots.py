@@ -1,3 +1,26 @@
+
+#    Some functions to encapsulate wordy plotting code to make the
+#    notebook look neat.
+#
+#    Copyright (C) 2023 MI2G
+#    Dobson, Paul pdobson@ed.ac.uk
+#    Kemajou, Mbakam Charlesquin cmk2000@hw.ac.uk
+#    Klatzer, Teresa t.klatzer@sms.ed.ac.uk
+#    Melidonis, Savvas sm2041@hw.ac.uk
+#
+#    This program is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
@@ -122,100 +145,6 @@ def plots(x,y,post_meanvar,post_meanvar_absfourier, nrmse_values, psnr_values, s
     plt.legend()
     plt.show()
     plt.close()
-
-def plots_libary(true_x, y, mean_x, var_x, logPi_trace, samples, n_iter):
-
-    if not isinstance(samples, torch.Tensor):
-        samples = torch.tensor(samples)
-    
-    mean_ = mean_x.detach().cpu().squeeze()
-    var_ = var_x.detach().cpu().squeeze()
-    
-    fig, axes = plt.subplots(nrows=2, ncols=4, figsize = (15,10))
-    fig.tight_layout(pad=.01)
-    
-    # --- Ground truth
-    axes[0,0].imshow(true_x.detach().cpu().squeeze(), cmap="gray")
-    axes[0,0].set_title('Ground truth image')
-    axes[0,0].axis('off')
-
-    # --- Blurred
-    axes[0,1].imshow(y.detach().cpu().squeeze(), cmap="gray")
-    axes[0,1].set_title('Blurred noisy image')
-    axes[0,1].axis('off')
-
-    # --- MMSE
-    axes[0,2].imshow(mean_, cmap="gray")
-    axes[0,2].set_title('x - posterior mean')
-    axes[0,2].axis('off')
-
-    # --- Variance
-    axes[0,3].imshow(var_, cmap="gray")
-    axes[0,3].set_title('x - posterior variance')
-    axes[0,3].axis('off')
-
-    # --- MMSE / SD
-    axes[1,0].imshow(mean_/np.sqrt(var_), cmap="gray")
-    axes[1,0].set_title('x - posterior mean/posterior SD')
-    axes[1,0].axis('off')
-
-    # --- SD / MMSE
-    axes[1,1].imshow(np.sqrt(var_)/mean_,cmap="gray")
-    axes[1,1].set_title('x - Coefs of variation (SD/mean)')
-    axes[1,1].axis('off')
-
-    # --- Mean Fourier coefs
-    axes[1,2].imshow(np.log(np.abs(np.fft.fft2(mean_))))
-    axes[1,2].set_title('Mean coefs fourier space (log-scale)')
-    axes[1,2].axis('off')
-    
-    # --- Variance Fourier coefs
-    axes[1,3].imshow(np.log(np.abs(np.fft.fft2(var_))))
-    axes[1,3].set_title('Var coefs fourier space (log-scale)')
-    axes[1,3].axis('off')
-                
-    # --- NRMSE ---                
-    fig, axes = plt.subplots(nrows=1, ncols=3, figsize = (15,5))
-    fig.tight_layout(pad=.01)
-    
-    nrmse_values = np.zeros(samples.shape[0])
-    psnr_values = np.zeros(samples.shape[0])
-    ssim_values = np.zeros(samples.shape[0])
-
-    # initialize welford algorithm to compute quality measures
-    # from cumulative mean
-    from functions.welford import welford
-    post_meanvar = welford(samples[0])
-
-    for i in range(samples.shape[0]):
-        # update the sample summary statistics
-        post_meanvar.update(samples[i])
-        # compute the quality measures
-        running_mean = post_meanvar.get_mean().detach().cpu().squeeze()
-        nrmse_values[i] = NRMSE(running_mean, true_x)
-        psnr_values[i] = PSNR(running_mean, true_x)
-        ssim_values[i] = SSIM(running_mean, true_x)
-
-    axes[0].plot(np.linspace(1,n_iter,samples.shape[0]), nrmse_values, label =  "-- NRMSE --")
-    axes[0].set_title('NRMSE of $X$ vs $x_{gr}$')
-    axes[0].legend()
-    
-    # --- PSNR ---
-    axes[1].plot(np.linspace(1,n_iter,samples.shape[0]), psnr_values, label =  "-- PSNR --")
-    axes[1].set_title('PSNR of $X$ vs $x_{gr}$')
-    axes[1].legend()
-
-    # --- SSIM ---
-    axes[2].plot(np.linspace(1,n_iter,samples.shape[0]), ssim_values, label =  "-- SSIM --")
-    axes[2].set_title('SSIM of $X$ vs $x_{gr}$')
-    axes[2].legend()
-                     
-    # --- log pi
-    plt.figure(figsize = (15,10))
-    plt.semilogx(np.arange(1,logPi_trace.shape[0]+1), logPi_trace, label =  "- $\log \pi$ -")
-    plt.legend()
-    plt.show()
-    
     
     
 def downsampling_variance(X_chain):
