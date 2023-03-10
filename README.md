@@ -7,5 +7,4 @@ Teresa Klatzer [t.klatzer@sms.ed.ac.uk](t.klatzer@sms.ed.ac.uk) , Savvas Melidon
 
 ### Funding
 
-We acknowledge funding from projects [BOLT](https://www.macs.hw.ac.uk/~mp71/bolt.html), [BLOOM](https://www.macs.hw.ac.uk/~mp71/bloom.html) and LEXCI.
-This work was supported by the UK Research and Innovation (UKRI) Engineering and Physical Sciences Research Council (EPSRC) grants EP/V006134/1 , EP/V006177/1 and EP/T007346/1, the UK Royal Academy of Engineering under the Research Fellowship Scheme (RF201617/16/31) and the Leverhulme Trust (RF/ 2020-310).
+We acknowledge funding from projects [BOLT](https://www.macs.hw.ac.uk/~mp71/bolt.html), [BLOOM](https://www.macs.hw.ac.uk/~mp71/bloom.html) and [LEXCI](https://www.macs.hw.ac.uk/~mp71/lexci.html): This work was supported by the UK Research and Innovation (UKRI) Engineering and Physical Sciences Research Council (EPSRC) grants EP/V006134/1 , EP/V006177/1 and EP/T007346/1, EP/W007673/1 and EP/W007681/1.
