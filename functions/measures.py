@@ -3,10 +3,10 @@
 #    peak signal to noise ratio (PSNR).
 #
 #    Copyright (C) 2023 MI2G
-#    Paul Dobson pdobson@ed.ac.uk
-#    Charlesquin Kemajou cmk2000@hw.ac.uk
-#    Teresa Klatzer t.klatzer@sms.ed.ac.uk
-#    Savvas Melidonis sm2041@hw.ac.uk
+#    Dobson, Paul pdobson@ed.ac.uk
+#    Kemajou, Mbakam Charlesquin cmk2000@hw.ac.uk
+#    Klatzer, Teresa t.klatzer@sms.ed.ac.uk
+#    Melidonis, Savvas sm2041@hw.ac.uk
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU General Public License as published by
