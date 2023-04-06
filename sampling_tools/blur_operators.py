@@ -36,7 +36,7 @@
 
 import torch
 import numpy as np
-from functions.max_eigenval import max_eigenval
+from sampling_tools.max_eigenval import max_eigenval
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
