@@ -17,6 +17,7 @@ from os import path
 release_info = {}
 infopath = os.path.abspath(os.path.join(os.path.dirname(__file__),
                                         __name__, 'info.py'))
+
 with open(infopath) as open_file:
     exec(open_file.read(), release_info)
 
@@ -47,15 +48,7 @@ setup(
     license=release_info['__license__'],
     description=release_info['__about__'],
     long_description=release_info['__long_description__'],
-    setup_requires=release_info['__setup_requires__'],
-    tests_require=release_info['__tests_require__'],
-    classifiers=[
-        "Programming Language :: Python :: 3.6",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: MacOS",
-        "Operating System :: POSIX :: Linux",
-        "Topic :: Scientific/Engineering",
-        "Intended Audience :: Science/Research",
-        "Intended Audience :: Developers"],
+    classifiers=release_info['__classifiers__'],
+    platforms=release_info['__platforms__']
 )
 
