@@ -30,7 +30,6 @@ def read_file(file):
    with open(file) as f:
         return f.read()
 
-# long_description = read_file(".pip_readme.rst")
 required = read_requirements("requirements/requirements-core.txt")
 
 include_dirs = [numpy.get_include(),]
@@ -47,6 +46,7 @@ setup(
     install_requires=required,
     license=release_info['__license__'],
     description=release_info['__about__'],
+    long_description=release_info['__long_description__'],
     setup_requires=release_info['__setup_requires__'],
     tests_require=release_info['__tests_require__'],
     classifiers=[
