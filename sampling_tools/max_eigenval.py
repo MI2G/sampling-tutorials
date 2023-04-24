@@ -30,13 +30,9 @@
 #    You should have received a copy of the GNU General Public License
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import numpy as np
-from scipy.linalg import norm
 import torch
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def max_eigenval(A, At, im_size, tol, max_iter, verbose):
+def max_eigenval(A, At, im_size, tol, max_iter, verbose, device):
 
     with torch.no_grad():
 
