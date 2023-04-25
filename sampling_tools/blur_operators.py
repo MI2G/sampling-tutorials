@@ -36,11 +36,9 @@
 
 import torch
 import numpy as np
-from functions.max_eigenval import max_eigenval
+from sampling_tools.max_eigenval import max_eigenval
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def blur_operators(kernel_len, size, type_blur, var = None):
+def blur_operators(kernel_len, size, type_blur, device, var = None):
 
     nx = size[0]
     ny = size[1]
@@ -68,6 +66,6 @@ def blur_operators(kernel_len, size, type_blur, var = None):
     # A backward operator
     AT = lambda x: torch.fft.ifft2(torch.multiply(HC_FFT,torch.fft.fft2(x))).real.reshape(x.shape)
 
-    AAT_norm = max_eigenval(A, AT, nx, 1e-4, int(1e4), 0)
+    AAT_norm = max_eigenval(A, AT, nx, 1e-4, int(1e4), 0, device)
 
     return A, AT, AAT_norm

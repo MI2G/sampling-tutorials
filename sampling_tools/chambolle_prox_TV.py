@@ -62,11 +62,7 @@
 
 import torch
 
-# Cuda 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print('Using device:', device)
-
-def GradientIm(u):
+def GradientIm(u, device):
     u_shapex = list(u.shape)
     u_shapex[0] = 1
     z = u[1:,:] - u[:-1,:]
@@ -93,7 +89,7 @@ def DivergenceIm(p1, p2):
 
 
 
-def chambolle_prox_TV(g1, varargin):
+def chambolle_prox_TV(g1, device, varargin):
   with torch.no_grad():
 
     g = g1.clone().detach()
@@ -142,7 +138,7 @@ def chambolle_prox_TV(g1, varargin):
       divp = DivergenceIm(px,py) 
       u = divp - torch.divide(g, lambd).to(device)
       # compute gradient of u
-      upx,upy = GradientIm(u)
+      upx,upy = GradientIm(u, device)
 
       tmp = torch.sqrt(upx*upx + upy*upy).to(device)
       #error

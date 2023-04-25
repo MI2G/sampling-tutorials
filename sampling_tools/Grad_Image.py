@@ -23,9 +23,7 @@
 import numpy as np
 import torch
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-
-def Grad_Image(x):
+def Grad_Image(x, device):
 
     with torch.no_grad():
 
