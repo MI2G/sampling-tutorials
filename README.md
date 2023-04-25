@@ -11,3 +11,16 @@ In these tutorials, you will learn about Bayesian computation for inverse proble
 ### Funding
 
 We acknowledge funding from projects [BOLT](https://www.macs.hw.ac.uk/~mp71/bolt.html), [BLOOM](https://www.macs.hw.ac.uk/~mp71/bloom.html) and [LEXCI](https://www.macs.hw.ac.uk/~mp71/lexci.html): This work was supported by the UK Research and Innovation (UKRI) Engineering and Physical Sciences Research Council (EPSRC) grants EP/V006134/1 , EP/V006177/1 and EP/T007346/1, EP/W007673/1 and EP/W007681/1.
+
+### Optional: Install sampling_tools as a package
+
+We provide code so that you can install the `sampling_tools` module as a package, and use it in your own code.
+`sampling_tools` can be easily installed with `pip`. After cloning the repository, run the following commands:
+
+```bash
+$ cd sampling-tutorials
+$ pip install .
+```
+
+This is optional, you can run the tutorial notebooks without installing `sampling_tools`.
+The package can then be imported in Python as `import sampling_tools as st`. 
