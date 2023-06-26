@@ -8,3 +8,5 @@ from .measures import *
 from .tv_norm import *
 from .plots import *
 from .welford import *
+from .load_model import *
+from .spectral_normalize_chen import *
