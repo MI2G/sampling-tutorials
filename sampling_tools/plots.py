@@ -51,7 +51,7 @@ def plot_trace(x, title="Title", x_label="xlabel"):
     plt.xlabel(x_label)
 
 
-def plots(x,y,post_meanvar,post_meanvar_absfourier, nrmse_values, psnr_values, ssim_values, logPi_trace):
+def plots(x,y,post_meanvar,post_meanvar_absfourier, nrmse_values, psnr_values, ssim_values, logPi_trace=None):
     
     post_mean_numpy = post_meanvar.get_mean().detach().cpu().numpy()
     post_var_numpy = post_meanvar.get_var().detach().cpu().numpy()
@@ -138,12 +138,12 @@ def plots(x,y,post_meanvar,post_meanvar_absfourier, nrmse_values, psnr_values, s
     plt.close()
                      
     # --- log pi
-    plot = plt.figure(figsize = (15,10))
-    
-    plt.plot(np.arange(len(logPi_trace))[::10],logPi_trace[::10], label =  "- $\log \pi$ -")
-    plt.legend()
-    plt.show()
-    plt.close()
+    if type(logPi_trace) == np.ndarray:
+        plot = plt.figure(figsize = (15,10))
+        plt.plot(np.arange(len(logPi_trace))[::10],logPi_trace[::10], label =  "- $\log \pi$ -")
+        plt.legend()
+        plt.show()
+        plt.close()
     
     
 def downsampling_variance(X_chain):
