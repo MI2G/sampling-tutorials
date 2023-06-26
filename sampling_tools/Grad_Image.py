@@ -23,6 +23,22 @@
 import numpy as np
 import torch
 
+# horizontal and vertical finite defference operators
+def diffh(x):
+    x_diffh = torch.zeros(x.shape)
+    x_diffh[:,:-1] = x[:,1:] - x[:,0:-1]
+    return x_diffh
+
+def diffv(x):
+    x_diffv = torch.zeros(x.shape)
+    x_diffv[:-1, :] = x[1:, :] - x[0:-1,:]
+    return x_diffv.T
+
+# Total variation norm
+def TVnorm(x):
+    y = torch.sum(torch.sqrt(diffh(x)**2 + diffv(x)**2))
+    return y
+
 def Grad_Image(x, device):
 
     with torch.no_grad():
