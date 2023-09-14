@@ -18,7 +18,7 @@ We provide code so that you can install the `sampling_tools` module as a package
 `sampling_tools` can be easily installed with `pip`. After cloning the repository, run the following commands:
 
 ```bash
-$ cd sampling-tutorials
+$ cd sampling-tools
 $ pip install .
 ```
 
