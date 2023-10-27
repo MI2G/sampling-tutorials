@@ -1,4 +1,4 @@
-# sampling_tutorials : The Bayesian Approach to Inverse Problems in Imaging Science
+# sampling-tutorials : The Bayesian Approach to Inverse Problems in Imaging Science
 
 In these tutorials, you will learn about Bayesian computation for inverse problems in imaging science. We set up an image deconvolution problem and solve the inverse problem by using different sampling algorithms. Because we obtain samples from the posterior distribution we are able to do uncertainty quantification and other advance inferences. There is a Python notebook using a vanilla [Langevin sampling algorithm](https://hal.science/hal-01267115/document) (MYULA_pytorch.ipynb) and an accelerated algorithm [SK-ROCK](https://pure.hw.ac.uk/ws/portalfiles/portal/41830170/19m1283719.pdf) (using an explicit stabilized method, SKROCK_pytorch.ipynb). We showcase a deblurring problem using a Total Variation (TV) prior. Another tutorial features a plug-and-play ULA algorithm [PnP-ULA](https://epubs.siam.org/doi/abs/10.1137/21M1406349?journalCode=sjisbi) using a neural network by [Ryu et al](https://github.com/uclaopt/Provable_Plug_and_Play/). The latest tutorial on Empirical Bayes Estimation enables you to understand how regularization parameters can be estimated in a Bayesian way without requiring ground truth. It's an implementation of the SAPG algorithm originally proposed by [Vidal et al](https://epubs.siam.org/doi/pdf/10.1137/20M1339829).
 
@@ -18,7 +18,7 @@ We provide code so that you can install the `sampling_tools` module as a package
 `sampling_tools` can be easily installed with `pip`. After cloning the repository, run the following commands:
 
 ```bash
-$ cd sampling_tutorials
+$ cd sampling-tutorials
 $ pip install .
 ```
 
