@@ -3,7 +3,7 @@
 In these tutorials, you will learn about Bayesian computation for inverse problems in imaging science. We set up an image deconvolution problem and solve the inverse problem by using different sampling algorithms. Because we obtain samples from the posterior distribution we are able to do uncertainty quantification and other advance inferences. There is a Python notebook using a vanilla [Langevin sampling algorithm](https://hal.science/hal-01267115/document) (MYULA_pytorch.ipynb) and an accelerated algorithm [SK-ROCK](https://pure.hw.ac.uk/ws/portalfiles/portal/41830170/19m1283719.pdf) (using an explicit stabilized method, SKROCK_pytorch.ipynb). We showcase a deblurring problem using a Total Variation (TV) prior. Another tutorial features a plug-and-play ULA algorithm [PnP-ULA](https://epubs.siam.org/doi/abs/10.1137/21M1406349?journalCode=sjisbi) using a neural network by [Ryu et al](https://github.com/uclaopt/Provable_Plug_and_Play/). The latest tutorial on Empirical Bayes Estimation enables you to understand how regularization parameters can be estimated in a Bayesian way without requiring ground truth. It's an implementation of the SAPG algorithm originally proposed by [Vidal et al](https://epubs.siam.org/doi/pdf/10.1137/20M1339829).
 
 ### Authors
-* Dobson, Paul [pdobson@ed.ac.uk](pdobson@ed.ac.uk)
+* Dobson, Paul [p.dobson_1@hw.ac.uk](p.dobson_1@hw.ac.uk)
 * Kemajou, Mbakam Charlesquin [cmk2000@hw.ac.uk](cmk2000@hw.ac.uk)
 * Klatzer, Teresa [t.klatzer@sms.ed.ac.uk](t.klatzer@sms.ed.ac.uk)
 * Melidonis, Savvas [sm2041@hw.ac.uk](sm2041@hw.ac.uk)
